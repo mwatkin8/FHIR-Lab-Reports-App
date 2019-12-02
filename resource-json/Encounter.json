@@ -1,0 +1,15 @@
+{
+  "resourceType": "Encounter",
+  "subject": {
+    "reference": "Patient/"
+  },
+  "status": "",
+  "class": {
+    "system": "",
+    "code": ""
+  },
+  "location": [],
+  "participant": [],
+  "classHistory": [],
+  "statusHistory": []
+}

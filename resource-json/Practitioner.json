@@ -1,0 +1,20 @@
+{
+  "resourceType": "Practitioner",
+  "name": [
+    {
+      "given": [
+        ""
+      ],
+      "family": "",
+      "suffix": [
+        ""
+      ]
+    }
+  ],
+  "identifier": [
+    {
+      "value": "",
+      "system": ""
+    }
+  ]
+}

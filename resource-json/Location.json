@@ -1,0 +1,12 @@
+{
+  "resourceType": "Location",
+  "name": "",
+  "address": {
+    "line": [
+      ""
+    ],
+    "city": "",
+    "state": "",
+    "postalCode": ""
+  }
+}

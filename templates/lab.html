@@ -1,0 +1,286 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <link rel="icon" href="img/fhir-reports.png">
+  <title>Verify report</title>
+  <!-- CSS -->
+  <link href="css/bootstrap.css" rel="stylesheet">
+  <link href="css/lab-form.css" rel="stylesheet">
+  <!-- JS -->
+  <script src="js/handlePDF.js"></script>
+  <script src="js/buildFHIR.js"></script>
+  <script src="../node_modules/pdfjs-dist/build/pdf.js"></script>
+  <script src="https://requirejs.org/docs/release/2.3.5/minified/require.js"></script>
+</head>
+
+<body class="bg-light">
+
+<div id='main' class="container">
+  <div class="py-5 text-center no-bottom">
+    <img class="d-block mx-auto mb-4" src="img/fhir-reports.png" alt="" width="72" height="72">
+    <h2>Verification</h2>
+    <p class="lead">Please upload the report and verify the fields below, <br>then submit the form for translation to FHIR resources.</p>
+  </div>
+
+  <div class="row">
+    <div class="col-md-4 order-md-1" style="padding-right: 0">
+      <button style="float:right" class="btn btn-primary btn-sm" onclick="samplePDF()">Sample Report</button>
+    </div>
+    <div class="col-md-4 order-md-1">
+      <p>
+        <input style="float: none" id="pdf-upload" type="file" onchange="loadPDF()">
+      </p>
+    </div>
+    <div class="col-md-4 order-md-1"></div>
+  </div>
+
+  <hr class="mb-4 hr-dot">
+
+  <div class="row">
+    <div class="col-md-8 order-md-2 mb-4 no-bottom">
+      <h5 class="mb-3">ARUP LABORATORIES | www.aruplab.com</h5>
+      <p>
+        500 Chipeta Way, Salt Lake City, Utah 84108-1221<br>
+        phone: (801) 583-2787, toll free: (800) 522-2787<br>
+        Julio C. Delgado, MD, MS, Director of Laboratories
+      </p>
+    </div>
+    <div class="col-md-4 order-md-2 mb-4">
+      <h4 class="patient-report" style="float: right;">Patient Report | </h4>
+    </div>
+  </div>
+  <hr class="mb-4 hr-bold">
+
+  <div class="row">
+    <div class="col-md-6 order-md-2 mb-4">
+      <div class="col-md-12 mb-3 form-group no-bottom">
+        <label style="font-size: large" class="demographics" for="patient">Patient: </label>
+        <input style="font-size: large" class="demographics demographics-input" id="patient" value=""/>
+      </div>
+      <div class="col-md-12 mb-3 form-group no-bottom">
+        <label class="demographics" for="dob">DOB: </label>
+        <input class="demographics-input" id="dob" value=""/>
+      </div>
+      <div class="col-md-12 mb-3 form-group no-bottom">
+        <label class="demographics" for="gender">Gender: </label>
+        <input class="demographics-input" id="gender" value=""/>
+      </div>
+      <div class="col-md-12 mb-3 form-group no-bottom">
+        <label class="demographics" for="patient-identifiers">Patient Identifiers: </label>
+        <input class="demographics-input" id="patient-identifiers" value=""/>
+      </div>
+      <div class="col-md-12 mb-3 form-group no-bottom">
+        <label class="demographics" for="visit-number">Visit Number (FIN): </label>
+        <input class="demographics-input" id="visit-number" value=""/>
+      </div>
+      <div class="col-md-12 mb-3 form-group no-bottom">
+        <label class="demographics" for="collection-date">Collection Date: </label>
+        <input class="demographics-input" id="collection-date" value=""/>
+      </div>
+    </div>
+
+    <div class="col-md-6 order-md-1">
+      <div class="col-md-12 mb-3 form-group">
+        <label for="client">Client: </label>
+        <input style="width:87%" id="client" value=""/>
+      </div>
+
+      <div class="col-md-12 mb-3">
+        <textarea id="address" rows="3"></textarea>
+      </div>
+      <div class="col-md-12 mb-3 form-group">
+        <label for="physician">Physician: </label>
+        <input style="width:81%" id="physician" value=""/>
+      </div>
+    </div>
+
+  </div>
+
+  <hr class="mb-4 hr-bold">
+
+  <div class="row">
+    <div class="col-md-10 order-md-1">
+      <div class="col-md-12 mb-3">
+        <textarea id="test-name" rows="1"></textarea>
+      </div>
+      <div class="col-md-12 mb-3">
+        <label for="test-code">ARUP test code </label>
+        <input style="float:none; width:25%" id="test-code" value=""/>
+      </div>
+    </div>
+  </div>
+
+  <hr class="mb-4">
+
+  <div class="row">
+    <div class="col-md-5 order-md-1">
+      <div class="col-md-12 mb-3">
+        <textarea id="specimen-title" rows="1"></textarea>
+      </div>
+    </div>
+    <div class="col-md-7 order-md-1">
+      <div class="col-md-12 mb-3">
+        <textarea id="specimen" rows="1"></textarea>
+      </div>
+    </div>
+  </div>
+
+  <hr class="mb-4">
+
+  <div class="row">
+    <div class="col-md-5 order-md-1">
+      <div class="col-md-12 mb-3">
+        <textarea id="genotype-title" rows="1"></textarea>
+      </div>
+    </div>
+    <div class="col-md-7 order-md-1">
+      <div class="col-md-12 mb-3">
+        <input style="float: none; width: 100%;" class="demographics" id="genotype-result" value=""/>
+        <textarea id="info1" rows="20"></textarea>
+      </div>
+    </div>
+  </div>
+
+  <hr class="mb-4 hr-bottom">
+
+  <div class="row">
+    <div class="col-md-12 order-md-1">
+      <h6 class="demographics text-center">H=High, L=Low, *=Abnormal, C=Critical</h6>
+    </div>
+  </div>
+
+  <hr class="mb-4 hr-bottom">
+
+  <div class="row">
+    <div class="col-md-5 order-md-1" >
+      <img style="float: left" class="d-block mx-auto mb-4" src="img/ARUP-icon.png" alt="" width="458" height="100">
+    </div>
+    <div class="col-md-7 order-md-1" >
+      <textarea class="report-info" id="report-info1" rows="6"></textarea>
+    </div>
+  </div>
+
+  <hr class="mb-4 hr-dot">
+
+  <div class="row">
+    <div class="col-md-8 order-md-2 mb-4 no-bottom">
+      <h5 class="mb-3">ARUP LABORATORIES | www.aruplab.com</h5>
+      <p>
+        500 Chipeta Way, Salt Lake City, Utah 84108-1221<br>
+        phone: (801) 583-2787, toll free: (800) 522-2787<br>
+        Julio C. Delgado, MD, MS, Director of Laboratories
+      </p>
+    </div>
+    <div class="col-md-4 order-md-2 mb-4">
+      <h4 class="patient-report" style="float: right;">Patient Report | </h4>
+    </div>
+  </div>
+
+  <hr class="mb-4 hr-bold">
+
+  <div class="row">
+    <div class="col-md-5 order-md-1">
+    </div>
+    <div class="col-md-7 order-md-1">
+      <div class="col-md-12 mb-3">
+        <textarea id="info2" rows="30"></textarea>
+      </div>
+    </div>
+  </div>
+
+  <hr class="mb-4 no-bottom">
+
+  <div class="row">
+    <div class="col-md-12 mb-3 text-center no-bottom">
+      <p class="no-bottom">VERIFIED/REPORTED DATES</p>
+    </div>
+  </div>
+
+  <hr class="mb-4 no-bottom">
+
+  <div class="row">
+    <div class="col-md-4 mb-3 text-center small">Procedure</div>
+    <div class="col-md-2 mb-3 text-center small">Accession</div>
+    <div class="col-md-2 mb-3 text-center small">Collected</div>
+    <div class="col-md-2 mb-3 text-center small">Received</div>
+    <div class="col-md-2 mb-3 text-center small">Verified/Reported</div>
+  </div>
+
+  <div class="row no-bottom">
+    <input id="proc-1" class="col-md-4 mb-3 text-center small no-bottom" value=""/>
+    <input id="acc-1" class="col-md-2 mb-3 text-center small no-bottom" value=""/>
+    <input id="coll-1" class="col-md-2 mb-3 text-center small no-bottom" value=""/>
+    <input id="rec-1" class="col-md-2 mb-3 text-center small no-bottom" value=""/>
+    <input id="ver_re-1" class="col-md-2 mb-3 text-center small no-bottom" value=""/>
+  </div>
+
+  <div class="row no-top">
+    <input id="proc-2" class="col-md-4 mb-3 text-center small" value=""/>
+    <input id="acc-2" class="col-md-2 mb-3 text-center small" value=""/>
+    <input id="coll-2" class="col-md-2 mb-3 text-center small" value=""/>
+    <input id="rec-2" class="col-md-2 mb-3 text-center small" value=""/>
+    <input id="ver_re-2" class="col-md-2 mb-3 text-center small" value=""/>
+  </div>
+
+  <br><br><br><br>
+
+  <div class="row">
+    <div class="col-md-12 mb-3 text-center">
+      <h4>END OF CHART</h4>
+    </div>
+  </div>
+
+  <br><br><br><br><br><br><br><br>
+
+  <hr class="mb-4 hr-bottom">
+
+  <div class="row">
+    <div class="col-md-12 order-md-1">
+      <h6 class="demographics text-center">H=High, L=Low, *=Abnormal, C=Critical</h6>
+    </div>
+  </div>
+
+  <hr class="mb-4 hr-bottom">
+
+  <div class="row">
+    <div class="col-md-5 order-md-1" >
+      <img style="float: left" class="d-block mx-auto mb-4" src="img/ARUP-icon.png" alt="" width="458" height="100">
+    </div>
+    <div class="col-md-7 order-md-1" >
+      <textarea class="report-info" id="report-info2" rows="6"></textarea>
+    </div>
+  </div>
+
+  <hr class="mb-4 hr-dot">
+
+  <div class="row">
+    <div class="col-md-12 order-md-1 text-center">
+      <label for="test-code">FHIR server: </label>
+      <input style="float:none; width:50%" id="server" value="https://api.logicahealth.org/fhirlabreports/open"/>
+    </div>
+  </div>
+<br>
+  <div class="row">
+    <div class="col-md-4 order-md-1"></div>
+    <div class="col-md-4 order-md-1">
+      <button class="btn btn-primary btn-lg btn-block" onclick="transform()">Submit</button>
+    </div>
+    <div class="col-md-4 order-md-1"></div>
+  </div>
+
+</div>
+
+<div id="loading" style="visibility: hidden">
+</div>
+
+<footer class="my-5 pt-5 text-muted text-center text-small">
+  <p class="mb-1">FHIR Lab Reports - Lab</p>
+  <p class="mb-1">Michael Watkins</p>
+  <p class="mb-1">2019</p>
+</footer>
+
+
+</body>
+</html>

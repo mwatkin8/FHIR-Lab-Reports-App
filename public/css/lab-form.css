@@ -1,0 +1,77 @@
+.container {
+  max-width: 960px;
+}
+
+.border-top { border-top: 1px solid #e5e5e5; }
+.border-bottom { border-bottom: 1px solid #e5e5e5; }
+.border-top-gray { border-top-color: #adb5bd; }
+
+.box-shadow { box-shadow: 0 .25rem .75rem rgba(0, 0, 0, .05); }
+
+.lh-condensed { line-height: 1.25; }
+
+.no-bottom{
+  padding-bottom: 0 !important;
+  margin-bottom: 0 !important;
+}
+.no-top{
+  padding-top: 0 !important;
+  margin-top: 0 !important;
+}
+
+hr.hr-dot{
+  border-top: 1px dashed lightgray;
+}
+
+hr.hr-bold{
+  margin-top: 0px;
+  border: 1px solid black;
+}
+
+hr.hr-bottom{
+  border-top: 1px solid black;
+}
+
+input{
+  float: right;
+}
+textarea{
+  width: 100%;
+}
+
+.demographics{
+  font-weight: bold;
+}
+
+.demographics-input{
+  width: 63%;
+}
+
+.report-info{
+  float:right;
+  width:70%;
+  text-align:right;
+  font-size: small;
+}
+
+.text-center{
+  text-align: center;
+}
+
+.small{
+  font-size: small
+}
+
+#loading {
+    background: url('../img/circle-loading-gif.gif') no-repeat center center;
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    z-index: 9999999;
+}
+
+.main-loading{
+  opacity: 0.5;
+}

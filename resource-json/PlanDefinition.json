@@ -1,0 +1,29 @@
+{
+  "resourceType": "PlanDefinition",
+  "meta": {
+    "profile": [
+      "http://hl7.org/fhir/StructureDefinition/cdshooksserviceplandefinition"
+    ]
+  },
+  "url": "",
+  "title": "",
+  "description": "",
+  "action": [
+    {
+      "trigger": [
+        {
+          "type": "",
+          "name": ""
+        }
+      ],
+      "input": [
+        {
+          "type": "",
+          "subjectCodeableConcept": {
+            "text": ""
+          }
+        }
+      ]
+    }
+  ]
+}

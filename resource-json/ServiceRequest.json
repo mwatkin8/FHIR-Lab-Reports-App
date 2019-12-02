@@ -1,0 +1,29 @@
+{
+  "resourceType": "ServiceRequest",
+  "status": "",
+  "intent": "",
+  "code": {
+    "coding": [
+      {
+        "system": "",
+        "code": ""
+      }
+    ],
+    "text": ""
+  },
+  "subject": {
+    "reference": "Patient/"
+  },
+  "occurrenceDateTime": "",
+  "requester": {
+    "reference": "Practitioner/"
+  },
+  "encounter": {
+    "reference": "Encounter/"
+  },
+  "locationReference": [
+    {
+      "reference": "Location/"
+    }
+  ]
+}

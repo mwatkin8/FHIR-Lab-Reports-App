@@ -1,0 +1,92 @@
+{
+  "resourceType": "Observation",
+  "meta": {
+    "profile": "http://hl7.org/fhir/uv/genomics-reporting/StructureDefinition/obs-implication"
+  },
+  "subject": {
+    "reference": "Patient/"
+  },
+  "component": [
+    {
+      "code": {
+        "coding": [
+          {
+            "code": "51963-7",
+            "system": "http://loinc.org",
+            "display": "medication assessed"
+          }
+        ]
+      },
+      "valueCodeableConcept": {
+        "coding": [
+          {
+            "code": "757702",
+            "system": "http://www.nlm.nih.gov/research/umls/rxnorm",
+            "display": "Simvastatin 10 MG Disintegrating Oral Tablet"
+          },
+          {
+            "code": "314231",
+            "system": "http://www.nlm.nih.gov/research/umls/rxnorm",
+            "display": " Simvastatin 10 MG Oral Tablet"
+          },
+          {
+            "code": "757703",
+            "system": "http://www.nlm.nih.gov/research/umls/rxnorm",
+            "display": " Simvastatin 20 MG Disintegrating Oral Tablet"
+          },
+          {
+            "code": "312961",
+            "system": "http://www.nlm.nih.gov/research/umls/rxnorm",
+            "display": " Simvastatin 20 MG Oral Tablet"
+          },
+          {
+            "code": "1790679",
+            "system": "http://www.nlm.nih.gov/research/umls/rxnorm",
+            "display": " Simvastatin 4 MG/ML Oral Suspension"
+          },
+          {
+            "code": "757704",
+            "system": "http://www.nlm.nih.gov/research/umls/rxnorm",
+            "display": " Simvastatin 40 MG Disintegrating Oral Tablet"
+          },
+          {
+            "code": "198211",
+            "system": "http://www.nlm.nih.gov/research/umls/rxnorm",
+            "display": " Simvastatin 40 MG Oral Tablet"
+          },
+          {
+            "code": "312962",
+            "system": "http://www.nlm.nih.gov/research/umls/rxnorm",
+            "display": " Simvastatin 5 MG Oral Tablet"
+          },
+          {
+            "code": "1944264",
+            "system": "http://www.nlm.nih.gov/research/umls/rxnorm",
+            "display": " Simvastatin 8 MG/ML Oral Suspension"
+          },
+          {
+            "code": "757705",
+            "system": "http://www.nlm.nih.gov/research/umls/rxnorm",
+            "display": " Simvastatin 80 MG Disintegrating Oral Tablet"
+          },
+          {
+            "code": "200345",
+            "system": "http://www.nlm.nih.gov/research/umls/rxnorm",
+            "display": " Simvastatin 80 MG Oral Tablet"
+          }
+        ]
+      }
+    }
+  ],
+  "status": "final",
+  "code": {
+    "coding": [
+      {
+        "code": "TBD",
+        "system": "http://loinc.org",
+        "display": "Genetic Implication"
+      }
+    ]
+  },
+  "valueString": ""
+}

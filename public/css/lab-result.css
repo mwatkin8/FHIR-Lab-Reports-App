@@ -1,0 +1,28 @@
+.resource-box{
+    background-color: white;
+    padding: 20px;
+}
+button{
+    vertical-align: center;
+    float: right;
+}
+ul{
+    list-style: none;
+}
+li{
+    padding: 10px;
+    border-bottom: 1px solid lightgray;
+}
+li:hover{
+    cursor: pointer;
+    background-color: #edf6ff;
+}
+.selected{
+    background-color: #edf6ff;
+}
+li p{
+    margin: 0;
+}
+.top{
+    border-top: 1px solid lightgray;
+}

@@ -1,0 +1,66 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <link rel="icon" href="img/fhir-reports.png">
+  <title>Results</title>
+  <!-- CSS -->
+  <link href="css/bootstrap.css" rel="stylesheet">
+  <link href="css/lab-result.css" rel="stylesheet">
+  <!-- JS -->
+  <script src="js/buildFHIR.js"></script>
+</head>
+
+<body class="bg-light">
+
+<div class="container">
+
+  <div class="py-5 text-center">
+    <img class="d-block mx-auto mb-4" src="img/fhir-reports.png" alt="" width="72" height="72">
+    <h2>Results</h2>
+    <p class="lead">The following resources were created to represent this report.<br>Select a resource below to view the raw JSON as it is on the server.</p>
+  </div>
+
+  <div class="row">
+    <div class="col-md-5 order-md-2 mb-4">
+      <ul>
+        <li class="top" onclick="viewResource(this,'pat')"><p>Patient</p></li>
+        <li onclick="viewResource(this,'pract-clinic')"><p>Practitioner (clinic)</p></li>
+        <li onclick="viewResource(this,'loc-clinic')"><p>Location (clinic)</p></li>
+        <li onclick="viewResource(this,'enc-clinic')"><p>Encounter (clinic)</p></li>
+        <li onclick="viewResource(this,'sr-blood')"><p>ServiceRequest (blood draw)</p></li>
+        <li onclick="viewResource(this,'sr-test')"><p>ServiceRequest (test)</p></li>
+        <li onclick="viewResource(this,'pract-blood')"><p>Practitioner (blood draw)</p></li>
+        <li onclick="viewResource(this,'enc-blood')"><p>Encounter (blood draw)</p></li>
+        <li onclick="viewResource(this,'proc-blood')"><p>Procedure (blood draw)</p></li>
+        <li onclick="viewResource(this,'specimen')"><p>Specimen (blood sample)</p></li>
+        <li onclick="viewResource(this,'loc-lab')"><p>Location (lab)</p></li>
+        <li onclick="viewResource(this,'pract-lab')"><p>Practitioner (lab)</p></li>
+        <li onclick="viewResource(this,'proc-test')"><p>Procedure (test)</p></li>
+        <li onclick="viewResource(this,'obs-imp')"><p>Observation (result - implication)</p></li>
+        <li onclick="viewResource(this,'obs-int')"><p>Observation (result - interpretation)</p></li>
+        <li onclick="viewResource(this,'obs-gen')"><p>Observation (result - genotype)</p></li>
+        <li onclick="viewResource(this,'obs-var')"><p>Observation (result - variant)</p></li>
+        <li onclick="viewResource(this,'dr')"><p>DiagnosticReport</p></li>
+        <li onclick="viewResource(this,'hook-ser')"><p>PlanDefinition (CDS Hooks Service)</p></li>
+        <li onclick="viewResource(this,'hook-res')"><p>RequestGroup (CDS Hooks Response)</p></li>
+      </ul>
+    </div>
+    <div class="col-md-7 order-md-2 mb-4">
+      <pre class="resource-box"><code id="view"></code></pre>
+    </div>
+  </div>
+
+  <hr class="mb-4" style="border: 1px dashed lightgray;">
+
+  <footer class="my-5 pt-5 text-muted text-center text-small">
+    <p class="mb-1">FHIR Lab Reports - Lab</p>
+    <p class="mb-1">Michael Watkins</p>
+    <p class="mb-1">2019</p>
+  </footer>
+
+</div>
+
+</body>
+</html>

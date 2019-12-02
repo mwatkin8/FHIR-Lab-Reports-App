@@ -1,0 +1,45 @@
+{
+  "resourceType": "RequestGroup",
+  "meta": {
+    "profile": [
+      "http://hl7.org/fhir/StructureDefinition/cdshooksrequestgroup"
+    ]
+  },
+  "status": "",
+  "intent": "",
+  "code": {
+    "coding": [
+      {
+        "system": "",
+        "code": ""
+      }
+    ]
+  },
+  "subject": {
+    "reference": "Patient/"
+  },
+  "action": [
+    {
+      "title": "",
+      "priority": "",
+      "documentation": [
+        {
+          "type": "",
+          "label": ""
+        }
+      ],
+      "action": [
+        {
+          "prefix": "",
+          "title": "",
+          "description": "",
+          "code": [
+            {
+              "text": ""
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

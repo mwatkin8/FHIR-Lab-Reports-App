@@ -1,0 +1,37 @@
+{
+  "resourceType": "DiagnosticReport",
+  "subject": {
+    "reference": "Patient/"
+  },
+  "status": "",
+  "basedOn":[
+    {
+      "reference": "ServiceRequest/"
+    }
+  ],
+  "encounter":{
+    "reference": "Encounter/"
+  },
+  "code": {
+    "coding": [
+      {
+        "code": "",
+        "system": "",
+        "display": ""
+      }
+    ]
+  },
+  "identifier": [],
+  "performer": [
+    {
+      "reference": "Practitioner/"
+    }
+  ],
+  "specimen": [
+    {
+      "reference": "Specimen/"
+    }
+  ],
+  "conclusion": "",
+  "result": []
+}

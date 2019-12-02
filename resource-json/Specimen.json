@@ -1,0 +1,20 @@
+{
+  "resourceType": "Specimen",
+  "subject": {
+    "reference": "Patient/"
+  },
+  "collection": {
+    "collector": {
+      "reference": "Practitioner/"
+    }
+  },
+  "type": {
+    "coding": [
+      {
+        "code": "BLD",
+        "system": "http://terminology.hl7.org/CodeSystem/v2-0487",
+        "display": "Whole blood"
+      }
+    ]
+  }
+}

@@ -1,0 +1,76 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <link rel="icon" href="img/fhir-reports.png">
+  <title>FHIR Lab Reports</title>
+  <!-- CSS -->
+  <link href="css/bootstrap.css" rel="stylesheet">
+  <link href="css/dashboard.css" rel="stylesheet">
+  <!-- JS -->
+  <script src="js/script.js"></script>
+  <script src="node_modules/pdfjs-dist/build/pdf.js"></script>
+  <!-- Icons -->
+  <script src="https://unpkg.com/feather-icons/dist/feather.min.js"></script>
+
+
+</head>
+
+<body onload="loadPatient()">
+<div class="container-fluid">
+  <div class="row">
+
+    <nav class="col-md-3 d-none d-md-block bg-light sidebar">
+      <div class="row pgx-title">
+        <div class="col-md-2">
+          <img class="mr-3" src="img/fhir-reports.png" alt="" width="40" height="48">
+        </div>
+        <div class="col-md-10">
+          <h4 style="padding-top: 10px;">FHIR Lab Reports</h4>
+        </div>
+      </div>
+
+      <div class="sidebar-sticky" style="padding: 15px">
+        <input id="searchBar" onkeyup="searchTests(this)" type="text" placeholder="Search">
+        <h6 class="sidebar-heading d-flex justify-content-between align-items-center px-3 mt-4 mb-1 text-muted">
+          <span style="padding-bottom: 10px">Test Reports in patient history</span>
+        </h6>
+        <ul id="test-list" class="nav flex-column" ></ul>
+        <div id="loading-list" style="visibility: hidden"></div>
+      </div>
+
+    </nav>
+
+    <main id='main' role="main" class="col-md-9 ml-sm-auto col-lg-9 pt-3 px-4">
+      <div class="d-flex flex-wrap flex-md-nowrap align-items-center pb-2 mb-3 border-bottom">
+        <p style="font-size: xx-large" id="patient-name"></p>&nbsp;&nbsp;<p style="padding-top: 10px;font-size: large" class="text-muted" id="demographics"></p>
+      </div>
+
+      <div id="main-container">
+        <div id="option-list">
+          <div style="width: 160px; height:200px">
+            <ul style="list-style: none; padding-left: 0">
+              <li id="summary-option" class="test-list-item" onclick="displaySummary()">Report Details <span data-feather="grid"></span></li>
+              <li id="pdf-option" class="test-list-item" onclick="displayPDF()">View PDF <span data-feather="file-text"></span></li>
+              <li id="fhir-option" class="test-list-item" onclick="displayFHIR()">FHIR Resources <span data-feather="database"></span></li>
+              <li id="hook-option" style="border-bottom: 1px lightgray solid;" class="test-list-item" onclick="displayHooks()">CDS Hooks <span data-feather="code"></span></li>
+            </ul>
+          </div>
+        </div>
+        <div id="main-content">
+          <div class="resource-box">
+            <h5 id="select-message" style="text-align: center"></h5>
+          </div>
+        </div>
+      </div>
+
+    </main>
+
+  </div>
+</div>
+<script>
+    feather.replace()
+</script>
+</body>
+</html>

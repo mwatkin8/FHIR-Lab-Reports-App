@@ -1,0 +1,71 @@
+{
+  "resourceType": "Observation",
+  "meta": {
+    "profile": "http://hl7.org/fhir/uv/genomics-reporting/StructureDefinition/obs-variant"
+  },
+  "subject": {
+    "reference": "Patient/"
+  },
+  "status": "final",
+  "code": {
+    "coding": [
+      {
+        "code": "69548-6",
+        "system": "http://loinc.org",
+        "display": "Genetic variant assessment"
+      }
+    ]
+  },
+  "valueCodeableConcept": {
+    "coding": [
+      {
+        "code": "LA9633-4",
+        "system": "http://loinc.org",
+        "display": "Genetic variant assessment (LL1971-2) - present"
+      }
+    ]
+  },
+  "method": {
+    "coding": [
+      {
+        "code": "",
+        "system": "http://loinc.org",
+        "display": ""
+      }
+    ]
+  },
+  "component": [
+    {
+      "code": {
+        "coding": [
+          {
+            "code": "",
+            "system": "http://loinc.org",
+            "display": ""
+          }
+        ]
+      },
+      "valueCodeableConcept": {
+        "coding": [
+          {
+            "code": "",
+            "system": "http://varnomen.hgvs.org",
+            "display": ""
+          }
+        ]
+      }
+    },
+    {
+      "code": {
+        "coding": [
+          {
+            "code": "81255-2",
+            "system": "http://loinc.org",
+            "display": "dbSNP"
+          }
+        ]
+      },
+      "valueString": ""
+    }
+  ]
+}

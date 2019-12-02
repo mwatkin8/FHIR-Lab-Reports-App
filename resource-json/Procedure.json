@@ -1,0 +1,27 @@
+{
+  "resourceType": "Procedure",
+
+  "subject": {
+    "reference": "Patient/"
+  },
+  "code": {
+    "coding": [
+      {
+        "code": "",
+        "system": "",
+        "display": ""
+      }
+    ]
+  },
+  "status": "",
+  "performer": [
+    {
+      "actor": {
+        "reference": "Practitioner/"
+      }
+    }
+  ],
+  "location": {
+    "reference": "Location/"
+  }
+}
