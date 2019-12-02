@@ -50,13 +50,13 @@ app.use((request, response, next) => {
 //-------FOR SMART LAUNCH-------
 app.use(express.static(path.join(__dirname, '/public/')));
 app.get('/smart-launch', async (request, response) => {
-    response.sendFile(path.join(__dirname + '/templates/launch.html'));
+    response.sendFile(path.join(__dirname + '/public/templates/launch.html'));
 });
 app.get('/lab', (request, response) => {
-    response.sendFile(path.join(__dirname + '/templates/lab.html'));
+    response.sendFile(path.join(__dirname + '/public/templates/lab.html'));
 });
 app.get('/', (request, response) => {
-    response.sendFile(path.join(__dirname + '/templates/index.html'));
+    response.sendFile(path.join(__dirname + '/public/templates/index.html'));
 });
 
 //-------FOR HOOKS SERVICE-------

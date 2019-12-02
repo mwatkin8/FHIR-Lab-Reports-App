@@ -76,11 +76,11 @@ async function transform(){
     localStorage['fhirID_hook_response'] = hook_response;
 
     //Launch results page
-    window.location.href = '../../templates/lab-result.html';
+    window.location.href = '../templates/lab-result.html';
 }
 
 async function fetchTemplate(type){
-    let response = await fetch('../../resource-json/' + type + '.json');
+    let response = await fetch('../resource-json/' + type + '.json');
     return await response.json();
 }
 

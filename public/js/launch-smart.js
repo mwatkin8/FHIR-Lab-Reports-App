@@ -8,7 +8,7 @@ async function launch(){
     //ID of the DiagnosticReport for selected test (if launched from hook card)
     let reportID = getUrlParameter("reportID");
     //Given by sandbox when registering
-    let client = "b31221cf-fef3-4266-a52c-30658f950599";
+    let client = "4838653c-bfe4-4481-a910-d52917dab31d";
     //Permission to launch and read all reasources for the launch patient
     let scope = ["patient/*.read","launch"].join(" ");
     //Random session key
