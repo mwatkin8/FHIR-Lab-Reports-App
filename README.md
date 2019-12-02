@@ -58,11 +58,11 @@ Set the client ID in <i>js/launch-smart.js</i> to the one given by the SMART ser
 
 ![client-id](doc_img/client-id.png)
 
-![client-id-code](doc_img/client-id-code.png)
+![client-id-code](doc_img/client-code.png)
 
 Launch the CDS Hooks Sandbox app from the HSPC app gallery.
 
-![hooks-app](doc_img/hooks-app.png)
+![hooks-app](doc_img/hook-app.png)
 
 Select the patient whose report was generated in part1-lab (patient for the sample form is shown below) to perform a SMART launch.
 
